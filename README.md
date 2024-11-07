@@ -31,8 +31,8 @@ In the era of large-scale pretrained models, efficiently transferring knowledge 
 * **DomainNet Dataset:** Download [DomainNet](http://ai.bu.edu/DomainNet/) .
 * Place these datasets in './data'.
 * Using readfile.py to generate '.txt' file for each dataset (change dataset argument in the file accordingly).
-  └───data
-│   │   Office-home
+data
+└───Office-home
 │       │   Art
 │       |   Clipart
 |       |   Product
@@ -41,13 +41,13 @@ In the era of large-scale pretrained models, efficiently transferring knowledge 
 │       │   Clipart_list.txt
 │       │   Product_list.txt
 │       │   Real_world_list.txt
-│   │   DomainNet
+└─── DomainNet
 │       │   Clipart
 │       │   Infograph
 │       │   ...
-│   │   Office-Caltech-
+└───  Office-Caltech-
 │       │   ...
-|   |   Office-31
+└───   Office-31
 |       |   ...
 
 ## Training:
