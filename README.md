@@ -31,7 +31,8 @@ In the era of large-scale pretrained models, efficiently transferring knowledge 
 * **DomainNet Dataset:** Download [DomainNet](http://ai.bu.edu/DomainNet/) .
 * Place these datasets in './data'.
 * Using readfile.py to generate '.txt' file for each dataset (change dataset argument in the file accordingly).
-
+  
+```
 data
 │       
 └───Office-home
@@ -52,6 +53,7 @@ data
 └───Office-31
 │   │   ...
 ...
+```
 
 ## Training:
 
