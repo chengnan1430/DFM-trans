@@ -6,3 +6,28 @@ In the era of large-scale pretrained models, efficiently transferring knowledge 
 
 ## Method
 ![F1](https://github.com/chengnan1430/DFM-trans/blob/main/image/F1.png)
+
+* First, DFM-Trans model integrates model knowledge from diverse source domains through an adaptive Feature Fusion Network (FFN), combining local and global features to enhance the model's capacity for feature representation.
+
+* Second, DFM-Trans model introduces a dynamic weight adjustment mechanism based on predictive uncertainty, allowing adaptive adjustment of source model weights to optimize performance in the target domain.
+
+* Finally, a comprehensive confidence-driven pseudo-labeling strategy is proposed, prioritizing knowledge extraction from high-confidence samples and transferring it to lower-confidence samples, effectively reducing the generation of erroneous pseudo labels.
+
+## Setup
+### Install Package Dependencies
+
+```
+* Python Environment: >= 3.6
+* torch >= 1.1.0
+* torchvision >= 0.3.0
+* scipy == 1.3.1
+* sklearn == 0.5.0
+* numpy == 1.17.4
+* argparse, PIL
+```
+
+## Datasets:
+* **Office Dataset:** Download the datasets [Office-31](https://drive.google.com/file/d/0B4IapRTv9pJ1WGZVd1VDMmhwdlE/view?resourcekey=0-gNMHVtZfRAyO_t2_WrOunA), [Office-Home](https://drive.google.com/file/d/0B81rNlvomiwed0V1YUxQdC1uOTg/view?resourcekey=0-2SNWq0CDAuWOBRRBL7ZZsw), [Office-Caltech](http://www.vision.caltech.edu/Image_Datasets/Caltech256/256_ObjectCategories.tar) .
+* **DomainNet Dataset:** Download [DomainNet](http://ai.bu.edu/DomainNet/) .
+* Place these datasets in './data'.
+* Using readfile.py to generate '.txt' file for each dataset (change dataset argument in the file accordingly).
