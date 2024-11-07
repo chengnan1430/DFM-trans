@@ -398,7 +398,7 @@ def obtain_pseudo_label(loader, netF_list, netH_list, netB_list, netC_list, netQ
     all_fea = torch.cat((all_feature, torch.ones(all_feature.size(0), 1)), 1)
     all_fea = (all_fea.t() / torch.norm(all_fea, p=2, dim=1)).t()
     all_fea = all_fea.float().cpu().numpy()
-    k = 20
+    k = 5
     lof = LocalOutlierFactor(n_neighbors=k)
     lof.fit(all_fea)
     lof_scores = -lof.negative_outlier_factor_
@@ -420,8 +420,8 @@ def obtain_pseudo_label(loader, netF_list, netH_list, netB_list, netC_list, netQ
     initc = aff.transpose().dot(all_fea)
     initc = initc / (1e-8 + aff.sum(axis=0)[:, None])
 
-    dd = cdist(all_fea, initc, 'cosine') #样本特征到类别质心的余弦距离
-    pred_label = dd.argmin(axis=1) #将每个样本分配到最近的质心类别
+    dd = cdist(all_fea, initc, 'cosine') 
+    pred_label = dd.argmin(axis=1) 
     acc = np.sum(pred_label == all_label.float().numpy()) / len(all_fea)
 
 
