@@ -31,3 +31,44 @@ In the era of large-scale pretrained models, efficiently transferring knowledge 
 * **DomainNet Dataset:** Download [DomainNet](http://ai.bu.edu/DomainNet/) .
 * Place these datasets in './data'.
 * Using readfile.py to generate '.txt' file for each dataset (change dataset argument in the file accordingly).
+  └───data
+│   │   Office-home
+│       │   Art
+│       |   Clipart
+|       |   Product
+|       |   Real_world 
+│       │   Art_list.txt
+│       │   Clipart_list.txt
+│       │   Product_list.txt
+│       │   Real_world_list.txt
+│   │   DomainNet
+│       │   Clipart
+│       │   Infograph
+│       │   ...
+│   │   Office-Caltech-
+│       │   ...
+|   |   Office-31
+|       |   ...
+
+## Training:
+
+* Train source models (shown here for Office-31 with source A)
+
+```shell
+python train_source.py --dset office-31 --s 1 --t 0 --max_epoch 100 --trte val --gpu_id 0 --output ckps/source/
+```
+
+* Adapt to target domain (shown here for Office-31 with target D)
+```shell
+python train_target.py --dset office-31 --t 1 --max_epoch 15 --gpu_id 0 --cls_par 0.7 --crc_par 0.01 --crc_mse 0.01 --output_src ckps/source/ --output ckps/DFM
+```
+
+
+
+
+
+
+
+
+
+
