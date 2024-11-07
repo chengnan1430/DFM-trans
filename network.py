@@ -254,7 +254,7 @@ class source_quantizer(nn.Module):
 class AdaptiveFeatureFusion(nn.Module):
     def __init__(self, dim_F, dim_H):
         super(AdaptiveFeatureFusion, self).__init__()
-        self.alpha = nn.Parameter(torch.tensor(0.2))
+        self.alpha = nn.Parameter(torch.tensor(0.9))
         self.fc_h = nn.Linear(dim_H, dim_F)
         self.offset = nn.Parameter(torch.ones(dim_F))
 
