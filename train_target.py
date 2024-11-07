@@ -206,8 +206,8 @@ def train_target(args):
         outputs_all_w = torch.zeros(inputs_test.shape[0], args.class_num)
         init_ent = torch.zeros(1, len(args.src))
         source_confidences = torch.zeros(1, len(args.src)).cuda()
-        temperature = 1.3
-        alpha = 0.9
+        temperature = 1.15
+        alpha = 0.85
         beta = 1 - alpha
 
 
